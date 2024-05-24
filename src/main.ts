@@ -19,12 +19,9 @@ async function runApp() {
 	const status = app.querySelector("#status")!;
 
 	status.innerHTML = "Fetching block number...";
-
-	document.querySelector("#blocknumber")!.innerHTML = `Fetching block number next step. For now let's check out which methods are on memory client:
-<ul>
-  ${Object.keys(memoryClient).map((key) => `<li>${key}</li>`)}
-</ul>`;
-
+	const blockNumber = await memoryClient.getBlockNumber();
+	document.querySelector("#blocknumber")!.innerHTML =
+		`ForkBlock: ${blockNumber}`;
 	status.innerHTML = "Done";
 }
 
