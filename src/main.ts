@@ -15,6 +15,15 @@ const memoryClient = createMemoryClient({
 async function runApp() {
 	app.innerHTML = `<div id="status">initializing...</div>
 <div id="blocknumber"></div>
+<div>
+  Address: <span id="address"></span>
+</div>
+<div>
+  Nonce: <span id="nonce"></span>
+</div>
+<div>
+  Balance: <span id="balance"></span>
+</div>
 `;
 	const status = app.querySelector("#status")!;
 
