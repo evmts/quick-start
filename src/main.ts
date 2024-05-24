@@ -113,6 +113,48 @@ async function runApp() {
 
 	status.innerHTML = `updating ui to reflect newly mined tx ${deployResult.txHash} deploying contract ${deployResult.createdAddress}...`;
 
+	const deployedContract = SimpleContract.withAddress(
+		deployResult.createdAddress as Address,
+	);
+
+	status.innerHTML = "Querying contract with tevmContract...";
+
+	const contractResult = await memoryClient.tevmContract({
+		abi: deployedContract.abi,
+		functionName: "get",
+		to: deployedContract.address,
+	});
+	if (contractResult.errors) throw contractResult.errors;
+	console.log(contractResult.rawData); // returns the raw data returned by evm
+	console.log(contractResult.data); // returns the decoded data. Should be the initial value we set
+	console.log(contractResult.executionGasUsed); // returns the execution gas used (won't include the data cost or base fee)
+	// console log the entire result to become familiar with what all gets returned
+
+	const newValue = 10_000n;
+	status.innerHTML = `Current value ${contractResult.data}. Changing value to ${newValue}`;
+
+	// just like tevmCall we can write with `createTransaction: true`
+	// remember the default `from` address is `prefundedAccounts[0]` when not specified!
+	const writeResult = await memoryClient.tevmContract({
+		createTransaction: true,
+		abi: deployedContract.abi,
+		functionName: "set",
+		args: [newValue],
+		to: deployedContract.address,
+	});
+
+	status.innerHTML = `Current value ${contractResult.data}. Changing value to ${newValue}. Mining tx ${writeResult.txHash}`;
+
+	// remember to mine
+	const mineResult = await memoryClient.tevmMine();
+
+	// feel free to double check the value actually changed by calling tevmContract again!
+
+	status.innerHTML = `Value changed in block ${mineResult.blockHashes?.join(
+		",",
+	)}. Updating storage in html...`;
+
+	// now let's refresh the account information to update storage
 	await updateAccounts(deployResult.createdAddress as Address);
 	status.innerHTML = "done";
 }
