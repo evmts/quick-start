@@ -1,5 +1,8 @@
 import { createMemoryClient, http } from "tevm";
 import { optimism } from "tevm/common";
+import { prefundedAccounts } from "tevm";
+
+console.log("accounts prefunded with 1000 eth", prefundedAccounts);
 
 const app = document.querySelector("#app") as Element;
 
