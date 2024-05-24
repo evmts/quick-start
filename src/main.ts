@@ -119,11 +119,9 @@ async function runApp() {
 
 	status.innerHTML = "Querying contract with tevmContract...";
 
-	const contractResult = await memoryClient.tevmContract({
-		abi: deployedContract.abi,
-		functionName: "get",
-		to: deployedContract.address,
-	});
+	const contractResult = await memoryClient.tevmContract(
+		deployedContract.read.get(),
+	);
 	if (contractResult.errors) throw contractResult.errors;
 	console.log(contractResult.rawData); // returns the raw data returned by evm
 	console.log(contractResult.data); // returns the decoded data. Should be the initial value we set
@@ -136,11 +134,8 @@ async function runApp() {
 	// just like tevmCall we can write with `createTransaction: true`
 	// remember the default `from` address is `prefundedAccounts[0]` when not specified!
 	const writeResult = await memoryClient.tevmContract({
-		createTransaction: true,
-		abi: deployedContract.abi,
-		functionName: "set",
-		args: [newValue],
-		to: deployedContract.address,
+		createTransaction: "on-success",
+		...deployedContract.write.set(newValue),
 	});
 
 	status.innerHTML = `Current value ${contractResult.data}. Changing value to ${newValue}. Mining tx ${writeResult.txHash}`;
