@@ -47,20 +47,27 @@ async function runApp() {
   Balance: <span id="balance"></span>
 </div>
 `;
+
 	const status = app.querySelector("#status")!;
 
 	status.innerHTML = "Fetching block number...";
+
 	const blockNumber = await memoryClient.getBlockNumber();
 	document.querySelector("#blocknumber")!.innerHTML =
 		`ForkBlock: ${blockNumber}`;
 
 	status.innerHTML = "Setting account...";
-	const setAccountResult = await memoryClient.tevmSetAccount({
-		address,
-		balance: 420n,
+	const callResult = await memoryClient.tevmCall({
+		// this is the default `from` address so this line isn't actually necessary
+		from: prefundedAccounts[0],
+		to: address,
+		value: 420n,
 		throwOnFail: false,
+		// on-success will only create a transaction if the initial run of it doesn't revert
+		createTransaction: "on-success",
 	});
-	if (setAccountResult.errors) console.error(setAccountResult.errors);
+	// aggregate error is a good way to throw an array of errors
+	if (callResult.errors) throw new AggregateError(callResult.errors);
 
 	status.innerHTML = "Updating account...";
 	await updateAccounts();
