@@ -1,4 +1,4 @@
-import { Address, createMemoryClient, http } from "tevm";
+import { Address, Hex, createMemoryClient, http } from "tevm";
 import { optimism } from "tevm/common";
 import { prefundedAccounts } from "tevm";
 import { SimpleContract } from "tevm/contract";
@@ -143,7 +143,10 @@ async function runApp() {
 	// remember to mine
 	const mineResult = await memoryClient.tevmMine();
 
-	// feel free to double check the value actually changed by calling tevmContract again!
+	const receipt = await memoryClient.getTransactionReceipt({
+		hash: writeResult.txHash as Hex,
+	});
+	console.log(receipt);
 
 	status.innerHTML = `Value changed in block ${mineResult.blockHashes?.join(
 		",",
