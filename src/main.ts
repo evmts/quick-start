@@ -100,6 +100,8 @@ async function runApp() {
 	document.querySelector("#blocknumber")!.innerHTML =
 		`ForkBlock: ${blockNumber}`;
 
+	status.innerHTML = "Deploying contract...";
+
 	const initialValue = 420n;
 	const deployResult = await memoryClient.tevmDeploy({
 		from: prefundedAccounts[0],
