@@ -1,20 +1,21 @@
 {
-  "name": "tevm-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "tevm": "^1.1.0-next.60",
-    "viem": "^2.12.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.4.5",
-    "vite": "^5.2.11"
-  }
+	"name": "tevm-app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "npx vite ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"tevm": "^1.1.0-next.60",
+		"viem": "^2.12.1"
+	},
+	"devDependencies": {
+		"typescript": "^5.4.5",
+		"vite": "^5.2.11"
+	}
 }
