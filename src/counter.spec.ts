@@ -11,15 +11,26 @@ import { WriteHelloWorld } from "../contracts/WriteHelloWorld.s.sol";
 
 test("Call precompile from solidity script", async () => {
 	const client = createMemoryClient({
+		/**
+		 * THis precompile allows our solidity script to use `fs.writeFile` to write to the filesystem
+		 */
 		customPrecompiles: [fsPrecompile.precompile()],
 		loggingLevel: "trace",
 	});
 
+	/**
+	 * `tevmScript` runs arbitrary solidity scripts on the memory client
+	 */
 	await client.tevmScript({
+		/**
+		 * Tevm scripts when imported with the tevm compiler provide a stramlined dev experience where contract building happens directly via a
+		 * javascript import.
+		 */
 		...WriteHelloWorld.write.write(fsPrecompile.contract.address),
 		throwOnFail: false,
 	});
 
+	// test the solidity script wrote to the filesystem
 	expect(existsSync("test.txt")).toBe(true);
 
 	rmSync("test.txt");

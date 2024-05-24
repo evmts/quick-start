@@ -19,6 +19,11 @@ This repo demonstrates the [Tevm Getting Started Guide](https://tevm.sh/getting-
 
 There are also commits showing the boilerplate needed to run Tevm in the browser and set up the automatic solidity contract imports.
 
+## Main files
+
+- [src/main.ts](./src/main.ts) demonstrates the most basic tevm features such as modifying accounts deploying and calling contracts and using the viem api.
+- [src/counter.spec.ts](./src/counter.spec.ts) demonstrates more advanced tevm features such as solidity scripting and running javascript in solidity.
+
 ## Stack blitz
 
 This repo is available as a stackblitz [here](https://stackblitz.com/~/github.com/evmts/quick-start?file=src/main.ts). You will have to enable the local version of typescript after starting the stakblitz. More information is in a comment at the top of `src/main.ts`.
