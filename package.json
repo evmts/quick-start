@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "tevm": "^1.1.0-next.60",
+    "viem": "^2.12.1"
+  }
 }
