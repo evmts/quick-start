@@ -51,10 +51,18 @@ async function runApp() {
 	document.querySelector("#blocknumber")!.innerHTML =
 		`ForkBlock: ${blockNumber}`;
 
-	status.innerHTML = "Updating accounts...";
+	status.innerHTML = "Setting account...";
+	const setAccountResult = await memoryClient.tevmSetAccount({
+		address,
+		balance: 420n,
+		throwOnFail: false,
+	});
+	if (setAccountResult.errors) console.error(setAccountResult.errors);
+
+	status.innerHTML = "Updating account...";
 	await updateAccounts();
 
-	status.innerHTML = "Done";
+	status.innerHTML = "done";
 }
 
 runApp();
