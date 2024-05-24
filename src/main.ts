@@ -1,6 +1,7 @@
 import { createMemoryClient, http } from "tevm";
 import { optimism } from "tevm/common";
 import { prefundedAccounts } from "tevm";
+import { SimpleContract } from "tevm/contract";
 
 console.log("accounts prefunded with 1000 eth", prefundedAccounts);
 
@@ -76,6 +77,26 @@ async function runApp() {
 	status.innerHTML = "Updating account...";
 	await updateAccounts();
 
+	const initialValue = 420n;
+	const deployResult = await memoryClient.tevmDeploy({
+		from: prefundedAccounts[0],
+		abi: SimpleContract.abi,
+		// make sure to use bytecode rather than deployedBytecode since we are deploying
+		bytecode: SimpleContract.bytecode,
+		args: [initialValue],
+	});
+	if (deployResult.errors) throw new AggregateError(deployResult.errors);
+
+	status.innerHTML = `Mining contract deployment tx ${deployResult.txHash} for contract ${deployResult.createdAddress}...`;
+
+	// remember to mine!
+	await memoryClient.tevmMine();
+
+	status.innerHTML = `updating ui to reflect newly mined tx`;
+
+	// Pass in the contract address to updateAccounts
+	// we will update this function to display contract info in next step
+	await updateAccounts(deployResult.createdAddress);
 	status.innerHTML = "done";
 }
 
