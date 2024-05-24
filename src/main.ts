@@ -1,4 +1,4 @@
-import { createMemoryClient, http } from "tevm";
+import { Address, createMemoryClient, http } from "tevm";
 import { optimism } from "tevm/common";
 import { prefundedAccounts } from "tevm";
 import { SimpleContract } from "tevm/contract";
@@ -17,22 +17,42 @@ const memoryClient = createMemoryClient({
 });
 
 // addresses and abis must be as const for tevm types
-const address = `0x${"0420".repeat(10)}` as const;
-async function updateAccounts() {
-	// we are setting throwOnFail to false because we expect this to throw an error from the account not existing
+// const address = `0x${"0420".repeat(10)}` as const;
+async function updateAccounts(address: Address) {
 	const account = await memoryClient.tevmGetAccount({
 		address,
 		throwOnFail: false,
 	});
-	if (account.errors) {
-		// this will error
-		console.error("Unable to get account", account.errors);
-		return;
-	}
+	if (account.errors) throw account.errors;
 	console.log(account); // console log the account to get familiar with what properties are on it
 	document.querySelector("#address")!.innerHTML = address;
 	document.querySelector("#nonce")!.innerHTML = String(account.nonce);
 	document.querySelector("#balance")!.innerHTML = String(account.balance);
+
+	// Update contract account info
+	const contractAccount = await memoryClient.tevmGetAccount({
+		address,
+		throwOnFail: false,
+		returnStorage: true,
+	});
+	if (contractAccount.errors) throw contractAccount.errors;
+
+	const header = document.querySelector("#contractInfoHeader")!;
+	const info = document.querySelector("#contractInfoRow")!;
+
+	header.innerHTML = `<tr>Address</tr>
+  <tr>deplyedBytecode</tr>
+  ${Object.keys(contractAccount.storage ?? []).map(
+		(storageSlot) => `<tr>${storageSlot}</tr>`,
+	)}
+  `;
+
+	info.innerHTML = `<tr>${contractAccount.address}</tr>
+  <tr>${contractAccount.deployedBytecode}</tr>
+  ${Object.values(contractAccount.storage ?? []).map(
+		(storageValue) => `<tr>${storageValue}</tr>`,
+	)}
+  `;
 }
 
 async function runApp() {
@@ -72,26 +92,6 @@ async function runApp() {
 	document.querySelector("#blocknumber")!.innerHTML =
 		`ForkBlock: ${blockNumber}`;
 
-	status.innerHTML = "Sending eth to account...";
-
-	const callResult = await memoryClient.tevmCall({
-		// this is the default `from` address so this line isn't actually necessary
-		from: prefundedAccounts[0],
-		to: address,
-		value: 420n,
-		createTransaction: true,
-	});
-	if (callResult.errors) throw new AggregateError(callResult.errors);
-
-	status.innerHTML = "Mining block";
-
-	const mineResult = await memoryClient.tevmMine();
-	if (mineResult.errors) throw new AggregateError(mineResult.errors);
-	console.log(mineResult.blockHashes);
-
-	status.innerHTML = "Updating account...";
-	await updateAccounts();
-
 	const initialValue = 420n;
 	const deployResult = await memoryClient.tevmDeploy({
 		from: prefundedAccounts[0],
@@ -100,18 +100,16 @@ async function runApp() {
 		bytecode: SimpleContract.bytecode,
 		args: [initialValue],
 	});
-	if (deployResult.errors) throw new AggregateError(deployResult.errors);
+	if (deployResult.errors) throw deployResult.errors;
 
 	status.innerHTML = `Mining contract deployment tx ${deployResult.txHash} for contract ${deployResult.createdAddress}...`;
 
 	// remember to mine!
 	await memoryClient.tevmMine();
 
-	status.innerHTML = `updating ui to reflect newly mined tx`;
+	status.innerHTML = `updating ui to reflect newly mined tx ${deployResult.txHash} deploying contract ${deployResult.createdAddress}...`;
 
-	// Pass in the contract address to updateAccounts
-	// we will update this function to display contract info in next step
-	await updateAccounts(deployResult.createdAddress);
+	await updateAccounts(deployResult.createdAddress as Address);
 	status.innerHTML = "done";
 }
 
