@@ -56,17 +56,22 @@ async function runApp() {
 	document.querySelector("#blocknumber")!.innerHTML =
 		`ForkBlock: ${blockNumber}`;
 
-	status.innerHTML = "Setting account...";
+	status.innerHTML = "Sending eth to account...";
+
 	const callResult = await memoryClient.tevmCall({
 		// this is the default `from` address so this line isn't actually necessary
 		from: prefundedAccounts[0],
 		to: address,
 		value: 420n,
-		// on-success will only create a transaction if the initial run of it doesn't revert
-		createTransaction: "on-success",
+		createTransaction: true,
 	});
-	// aggregate error is a good way to throw an array of errors
 	if (callResult.errors) throw new AggregateError(callResult.errors);
+
+	status.innerHTML = "Mining block";
+
+	const mineResult = await memoryClient.tevmMine();
+	if (mineResult.errors) throw new AggregateError(mineResult.errors);
+	console.log(mineResult.blockHashes);
 
 	status.innerHTML = "Updating account...";
 	await updateAccounts();
