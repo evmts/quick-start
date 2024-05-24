@@ -2,7 +2,8 @@ import { Address, Hex, createMemoryClient, http } from "tevm";
 import { optimism } from "tevm/common";
 import { prefundedAccounts } from "tevm";
 import { SimpleContract } from "tevm/contract";
-
+import { Counter } from "../contracts/Counter.s.sol";
+console.log(Counter);
 console.log("accounts prefunded with 1000 eth", prefundedAccounts);
 
 const app = document.querySelector("#app") as Element;
