@@ -86,6 +86,10 @@ async function runApp() {
 
 	const status = app.querySelector("#status")!;
 
+	status.innerHTML = "Initializing memory client...";
+	// this isn't necessary to explicitly await readyness as other actions will wait for it implicitly
+	await memoryClient.tevmReady();
+
 	status.innerHTML = "Fetching block number...";
 
 	const blockNumber = await memoryClient.getBlockNumber();
