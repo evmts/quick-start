@@ -62,7 +62,6 @@ async function runApp() {
 		from: prefundedAccounts[0],
 		to: address,
 		value: 420n,
-		throwOnFail: false,
 		// on-success will only create a transaction if the initial run of it doesn't revert
 		createTransaction: "on-success",
 	});
