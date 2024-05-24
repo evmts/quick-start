@@ -47,6 +47,21 @@ async function runApp() {
 <div>
   Balance: <span id="balance"></span>
 </div>
+<h1>Counter contract</h1>
+
+<!-- Contract info -->
+<table border="1" id="contractInfo">
+    <thead>
+        <tr id="contractInfoHeader">
+            <!-- We will fill this in in js -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="contractInfoRow">
+            <!-- We will fill this in in js -->
+        </tr>
+    </tbody>
+</table>
 `;
 
 	const status = app.querySelector("#status")!;
