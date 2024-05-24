@@ -31,3 +31,12 @@ This repo is available as a stackblitz [here](https://stackblitz.com/~/github.co
 ## ⭐ [Consider starring on github](https://github.com/evmts/tevm-monorepo)
 
 ## [Join Telegram if you want to discuss tevm](https://t.me/+ANThR9bHDLAwMjUx)
+
+## Advanced NEXT.js example
+
+For a more advanced example using Tevm and NEXT.js to build a robust transaction simulator app see the [NEXT.js example](https://github.com/evmts/tevm-monorepo/tree/main/examples/next)
+
+<img width="1494" alt="image" src="https://github.com/evmts/quick-start/assets/35039927/b7fca77e-9542-42ad-894a-3fe5eb838fed">
+
+
+Shout out to polarzero who originally built this. [See his live version here](https://svvy.sh/)
