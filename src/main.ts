@@ -2,6 +2,9 @@ import { Address, Hex, createMemoryClient, http } from "tevm";
 import { optimism } from "tevm/common";
 import { prefundedAccounts } from "tevm";
 import { SimpleContract } from "tevm/contract";
+// To get rid of the red underline for this import you must use the local typescript version
+// https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript
+// > Typescript: Select Typescript version: Use Workspace Version
 import { Counter } from "../contracts/Counter.s.sol";
 console.log(Counter);
 console.log("accounts prefunded with 1000 eth", prefundedAccounts);
