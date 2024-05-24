@@ -1,12 +1,23 @@
+import { expect, test } from "vitest";
 import { createMemoryClient } from "tevm";
-import { Counter } from "../contracts/Counter.s.sol";
-import { test, expect } from "vitest";
 
-test("scripting", () => {
-	// let's just throw on fail since we are just playing with scripts not building a production app
-	const memoryClient = createMemoryClient();
+import { existsSync, rmSync } from "node:fs";
+import { fsPrecompile } from "./fsPrecompile.js";
 
-	const scriptResult = memoryClient.tevmScript(Counter.read.count());
+import { WriteHelloWorld } from "../contracts/WriteHelloWorld.s.sol";
 
-	expect(scriptResult).toMatchInlineSnapshot(`Promise {}`);
+test("Call precompile from solidity script", async () => {
+	const client = createMemoryClient({
+		customPrecompiles: [fsPrecompile.precompile()],
+		loggingLevel: "trace",
+	});
+
+	await client.tevmScript({
+		...WriteHelloWorld.write.write(fsPrecompile.contract.address),
+		throwOnFail: false,
+	});
+
+	expect(existsSync("test.txt")).toBe(true);
+
+	rmSync("test.txt");
 });
