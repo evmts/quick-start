@@ -3,6 +3,9 @@ import { defineCall, definePrecompile } from "tevm";
 /**
  * The tevm compiler allows us to import the solidity contract into javascript
  * `definePrecompile` will typecheck we implement it's interface correctly in typescript
+ * To get rid of the red underline for this import in stackblitz or vscode you must use the local typescript version
+ * https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript
+ * > Typescript: Select Typescript version: Use Workspace Version
  */
 import { Fs } from "../contracts/Fs.sol";
 
