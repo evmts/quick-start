@@ -20,12 +20,12 @@ const app = document.querySelector("#app") as Element;
 // It's main api is the viem api
 const memoryClient = createMemoryClient({
 	common: optimism,
-	// We disable forking simply to speed up tevm
-	// fork: {
-	// @warning we may face throttling using the public endpoint
-	// In production apps consider using `loadBalance` and `rateLimit` transports
-	// transport: http("https://mainnet.optimism.io")({}),
-	// },
+	// TIP: Disabling forking will speed up tevm
+	fork: {
+		// @warning we may face throttling using the public endpoint
+		// In production apps consider using `loadBalance` and `rateLimit` transports
+		transport: http("https://mainnet.optimism.io")({}),
+	},
 });
 
 // addresses and abis must be as const for tevm types

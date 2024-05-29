@@ -6,28 +6,31 @@ settings:
 
 dependencies:
   '@tevm/ts-plugin':
-    specifier: 1.1.0-next.60
-    version: 1.1.0-next.60(fast-check@3.19.0)(typescript@5.4.5)
+    specifier: 1.1.0-next.62
+    version: 1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5)
   tevm:
-    specifier: ^1.1.0-next.60
-    version: 1.1.0-next.60(typescript@5.4.5)(viem@2.12.1)
+    specifier: 1.1.0-next.63
+    version: 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)(viem@2.13.1)
   viem:
-    specifier: ^2.12.1
-    version: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+    specifier: ^2.13.1
+    version: 2.13.1(typescript@5.4.5)(zod@3.23.8)
 
 devDependencies:
   '@tevm/bundler':
-    specifier: ^1.1.0-next.60
-    version: 1.1.0-next.60(fast-check@3.19.0)(typescript@5.4.5)(webpack@5.91.0)
+    specifier: 1.1.0-next.62
+    version: 1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5)(webpack@5.91.0)
   typescript:
     specifier: ^5.4.5
     version: 5.4.5
   vite:
-    specifier: ^5.2.11
-    version: 5.2.11
+    specifier: ^5.2.12
+    version: 5.2.12
   vite-plugin-node-polyfills:
     specifier: ^0.22.0
-    version: 0.22.0(vite@5.2.11)
+    version: 0.22.0(vite@5.2.12)
+  vitest:
+    specifier: ^1.6.0
+    version: 1.6.0
 
 packages:
 
@@ -413,6 +416,13 @@ packages:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: /wrap-ansi@7.0.0
 
+  /@jest/schemas@29.6.3:
+    resolution: {integrity: sha512-mo5j5X+jIZmJQveBKeS/clAueipV7KgiX1vMgCxam1RNYiqE1w62n0/tJJnHtjW8ZHcQco5gY85jA3mi0L+nSA==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      '@sinclair/typebox': 0.27.8
+    dev: true
+
   /@jridgewell/gen-mapping@0.3.5:
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
@@ -478,8 +488,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@ponder/utils@0.1.5(typescript@5.4.5)(viem@2.12.1):
-    resolution: {integrity: sha512-bCP2WaKdZOvj0WEVX0QKTl4sm5oUumOPcaqlO0WppvDW8kH9IV4VJZMNIOq31zYd3GCj0Oy2/iMcqRD6XQjTbg==}
+  /@ponder/utils@0.1.6(typescript@5.4.5)(viem@2.13.1):
+    resolution: {integrity: sha512-j0/nq8k356oZfHtNWn3NumVUlZdPjgIhtXTsiTR/7FYV+tvv6kj4FL1809WARxAhL4qDADHxErz9/A4/uxuw0w==}
     peerDependencies:
       typescript: '>=5.0.4'
       viem: '>=1.16'
@@ -488,7 +498,7 @@ packages:
         optional: true
     dependencies:
       typescript: 5.4.5
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     dev: false
 
   /@rollup/plugin-inject@5.0.5:
@@ -681,23 +691,27 @@ packages:
       '@scure/base': 1.1.6
     dev: false
 
+  /@sinclair/typebox@0.27.8:
+    resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
+    dev: true
+
   /@tevm/actions-types@1.1.0-next.60:
     resolution: {integrity: sha512-kgRd+vR8Qf3CB7bPmWUDNFKAiwnG6JpuCByLQqoFUU3ybwAZ2wRWw6W58iAIF2yejTYMnNUeNy9Y7N4iG+HKLQ==}
     dev: false
 
-  /@tevm/actions@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-vCn1d3FUiyglIfVBLw8HbQ4ErK93yGAbqGr/b+DHZbp4ZnXblJoMSZQU9pbk6cPA91pToUerzTwXLnPNBaesJQ==}
+  /@tevm/actions@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-rR7f3fbejePo9tqQQqXEHYT+amBjimmxgf6oU3byJBdNAdCWhZgato7Mli09PJOGtEp8mnczk9BQJuzkRtEG2g==}
     dependencies:
-      '@tevm/block': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/blockchain': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/block': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/blockchain': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/jsonrpc': 1.1.0-next.60(typescript@5.4.5)
       '@tevm/procedures-types': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/receipt-manager': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/receipt-manager': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/tx': 1.1.0-next.60(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/vm': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/vm': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/zod': 1.1.0-next.60(typescript@5.4.5)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -718,34 +732,36 @@ packages:
     transitivePeerDependencies:
       - fast-check
 
-  /@tevm/base-client@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-XYLCsgvRrvbDNX+vZ0zivID7Wykh81wMzwwRH6lRZEw65neYaPtr/hEVCC6m5v3O8xIZmOUGuVJiNK5O8Ubrgg==}
+  /@tevm/base-client@1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-Kp4HeX8hxDQyoVIP61S0lkM5+26+IJnL74APxarBkrIzmzKfdEOieHKXLV6Vt+x3lKlfDsiSp3EmyFArkSLONg==}
     dependencies:
-      '@tevm/blockchain': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/common': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/evm': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/blockchain': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/common': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/evm': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/jsonrpc': 1.1.0-next.60(typescript@5.4.5)
       '@tevm/logger': 1.1.0-next.60
-      '@tevm/predeploys': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/receipt-manager': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/state': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/sync-storage-persister': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/txpool': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/predeploys': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/receipt-manager': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/state': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
+      '@tevm/sync-storage-persister': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
+      '@tevm/txpool': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/vm': 1.1.0-next.60(typescript@5.4.5)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      '@tevm/vm': 1.1.0-next.62(typescript@5.4.5)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
+      - debug
+      - fast-check
       - supports-color
       - typescript
       - utf-8-validate
       - zod
     dev: false
 
-  /@tevm/block@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-We/+A0l4h46Ds/f/0o2XE91hCyYQ5u/rY/p3CKwv/VghEftioIDTVnMfXjWx/thBaCrk6F540RkzFiGrH+8GCQ==}
+  /@tevm/block@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-/k2jPRG+qMdMjXaub/GTIlvK3DGPBBSVvxHZBJJDoL4aphFb+aRT9+1Zknz74dJoVZfuAg+nYBEiEP6b/6hLmQ==}
     dependencies:
-      '@tevm/common': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/common': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/rlp': 1.1.0-next.60
       '@tevm/trie': 1.1.0-next.60
       '@tevm/tx': 1.1.0-next.60(typescript@5.4.5)
@@ -758,15 +774,15 @@ packages:
       - zod
     dev: false
 
-  /@tevm/blockchain@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-E9oww+RaPHrIMFITjIFQq76chbeecagnFKiPFo06zSIVVdfg91jmTinrQHJ54d5b2pxoVGSbbbodGA+PKHXdgA==}
+  /@tevm/blockchain@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-OqBLK6w7WNrPMar4np3ZmcG59NKVOit0ElHnqpVMA9C/n5XhY/9tOTjbKSpdAg7yqpkb9XX9gHYUTXJ0di0ofA==}
     dependencies:
       '@ethereumjs/blockchain': 7.2.0
-      '@tevm/block': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/block': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/jsonrpc': 1.1.0-next.60(typescript@5.4.5)
       '@tevm/logger': 1.1.0-next.60
       '@tevm/trie': 1.1.0-next.60
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -795,12 +811,12 @@ packages:
       '@tevm/compiler': 1.1.0-next.60(fast-check@3.19.0)
       '@tevm/tsconfig': 1.1.0-next.60
       '@tevm/tsupconfig': 1.1.0-next.60
-      '@types/node': 20.12.12
+      '@types/node': 20.12.13
     transitivePeerDependencies:
       - fast-check
 
-  /@tevm/bundler@1.1.0-next.60(fast-check@3.19.0)(typescript@5.4.5)(webpack@5.91.0):
-    resolution: {integrity: sha512-kc1NsoW2ahYA53OISnf4tDpZPeD18x4pY1otAtB/lMi97YNV6Idq3nOKNF1cY2qnn/l5FiEic3wSLzB+IP3UaA==}
+  /@tevm/bundler@1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5)(webpack@5.91.0):
+    resolution: {integrity: sha512-YBc6ebrwQp+ucfJGMhFRAnlrbadRp1RSuI2O3o1vvpmBj8c8CRcMxRkCM+Z8t+mCc4ouCcFKGNoSRbiqucOhng==}
     dependencies:
       '@tevm/base-bundler': 1.1.0-next.60(fast-check@3.19.0)
       '@tevm/bun-plugin': 1.1.0-next.60(fast-check@3.19.0)
@@ -810,7 +826,7 @@ packages:
       '@tevm/rollup-plugin': 1.1.0-next.60(fast-check@3.19.0)
       '@tevm/rspack-plugin': 1.1.0-next.60(fast-check@3.19.0)
       '@tevm/solc': 1.1.0-next.60
-      '@tevm/ts-plugin': 1.1.0-next.60(fast-check@3.19.0)(typescript@5.4.5)
+      '@tevm/ts-plugin': 1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5)
       '@tevm/tsconfig': 1.1.0-next.60
       '@tevm/tsupconfig': 1.1.0-next.60
       '@tevm/vite-plugin': 1.1.0-next.60(fast-check@3.19.0)
@@ -834,13 +850,13 @@ packages:
       - zod
     dev: false
 
-  /@tevm/common@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-j8Q2hfolG0duoSkdrJSbNbou07P+cHBjzQ350ZAKv8IXkYJ5vI1G5fFFO3NSoiJvdOgUKDPm8U8/8uHCEtUxSg==}
+  /@tevm/common@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-w7dU8nyV1iUG3oau1CVn2XwbBH0dwoj9/9iBz6Lo4dK/SKAZRG7l8aMW3a92jjvxi97V4a7mff727ts//2VUPg==}
     dependencies:
       '@ethereumjs/common': 4.3.0
       '@tevm/logger': 1.1.0-next.60
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -855,7 +871,7 @@ packages:
       '@tevm/config': 1.1.0-next.60(fast-check@3.19.0)
       '@tevm/resolutions': 1.1.0-next.60
       '@tevm/solc': 1.1.0-next.60
-      '@types/node': 20.12.12
+      '@types/node': 20.12.13
       effect: 2.0.0-next.54
       resolve: 1.22.8
       solidity-ast: 0.4.56
@@ -867,14 +883,14 @@ packages:
     dependencies:
       '@effect/schema': 0.47.7(effect@2.0.0-next.54)(fast-check@3.19.0)
       '@tevm/effect': 1.1.0-next.60
-      '@types/node': 20.12.12
+      '@types/node': 20.12.13
       effect: 2.0.0-next.54
       zod: 3.23.8
     transitivePeerDependencies:
       - fast-check
 
-  /@tevm/contract@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-p278DQyfomybst+G+wuK9cJWDWbyz/92ZRlWy8Jo7Ghogg654PCmzCSH2aGULg4mbaSIjpdWBVBKpPx4a9SWjA==}
+  /@tevm/contract@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-6ovv+fBpPuonPpPbTltrmmE9MrzOZpLwJ+RIs4jwjh6b1ft8ynY59a2RSNNpnTROOk8Jwz6vCnaXvojGpY48JA==}
     dependencies:
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
     transitivePeerDependencies:
@@ -885,15 +901,15 @@ packages:
       - zod
     dev: false
 
-  /@tevm/decorators@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-MUin/n2qtQ1G3Sw6FrM1ZHCkWMKvY4TfOpmldxATUJzRRxegmsMG7+lfqThZFCBlL5cP3diYvjexY8SzWdewVw==}
+  /@tevm/decorators@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-8649l/deSBPqrwk6RJmRXzDtqdgOFpGzrZ0v0j5FTnKxCSZ2c9+zBS5EODlGKdxyzgt7OoapiTfLwixYw6aE4w==}
     dependencies:
-      '@tevm/actions': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/actions': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/actions-types': 1.1.0-next.60
-      '@tevm/procedures': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/procedures': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/procedures-types': 1.1.0-next.60(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -920,16 +936,15 @@ packages:
     transitivePeerDependencies:
       - debug
       - fast-check
-    dev: true
 
-  /@tevm/evm@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-P0sycdL7ADPxNN3crHrhjW//9UM69/IWByNZn99+b0k5Rq25DpRwBXR/f20ku6CVeiKJFQZ3l/wIoyFeV+3dgQ==}
+  /@tevm/evm@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-1h7/dQ7oHhnZQa3Al7YUdRNTf0E6aLd6pwvbZGQE/pn6N3LOZziFmrW8wmTATtrnDT/MbV9KZLZLdYXv+ogOkg==}
     dependencies:
       '@ethereumjs/evm': 3.0.0
-      '@tevm/blockchain': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/common': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/blockchain': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/common': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/logger': 1.1.0-next.60
-      '@tevm/predeploys': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/predeploys': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
     transitivePeerDependencies:
       - bufferutil
@@ -939,12 +954,12 @@ packages:
       - zod
     dev: false
 
-  /@tevm/http-client@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-6h3wXirGimv23k2QSibvMHud4hkP9yEOpV/A8p1vZy7rkN5D6ed58CHi/6zjEsVoQhgfj2mlBWFOSc5P933O2Q==}
+  /@tevm/http-client@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-1Wppxt3mbfEKgXWZVs+o9wLZoQhwctRzndGj3mgI2vpcHXETPLW3JSuRyCy10IfzZ50heCM/njZiXSF9qqim+Q==}
     dependencies:
-      '@tevm/contract': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/viem': 1.1.0-next.60(typescript@5.4.5)(viem@2.12.1)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      '@tevm/contract': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/viem': 1.1.0-next.60(typescript@5.4.5)(viem@2.13.1)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -956,8 +971,8 @@ packages:
   /@tevm/jsonrpc@1.1.0-next.60(typescript@5.4.5):
     resolution: {integrity: sha512-jzx5aANbirV84PiqDKJYMwjByurJdpvq5IW6fLZv9DaGz+1g/m53VHoKbXb6DycvOASoDGelpvrI3cG0gAUfoQ==}
     dependencies:
-      '@ponder/utils': 0.1.5(typescript@5.4.5)(viem@2.12.1)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      '@ponder/utils': 0.1.6(typescript@5.4.5)(viem@2.13.1)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - typescript
@@ -971,16 +986,31 @@ packages:
       pino: 8.21.0
     dev: false
 
-  /@tevm/memory-client@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-Ce0wAls1EqJ8kRvHuAZglADf/bnvoxpDtvdJZYEiAQrnEkSzOvQMrtUYfY/V60mslCrpP99eh9O5IaxXiabA0w==}
+  /@tevm/memory-client@1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-rnTQsaFXJvWDqMg0qNT0iVpg95p0QNLj9eZ0wKSxRqtULWoq9uosaQuAm8phK/Uw9BkizYXsSRRJ//j5XcRypg==}
     dependencies:
-      '@tevm/base-client': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/common': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/contract': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/decorators': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/evm': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/base-client': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
+      '@tevm/common': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/contract': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/decorators': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/evm': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - fast-check
+      - supports-color
+      - typescript
+      - utf-8-validate
+      - zod
+    dev: false
+
+  /@tevm/precompiles@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-ysddedMLoMcKygdQzk5my7TQA6o1ECwWpZn5TEaP4LPn53LqHgXvSkmLasfbi1HJzdjdGJ2L98WyuCB/8TRnwg==}
+    dependencies:
+      '@tevm/contract': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -989,23 +1019,10 @@ packages:
       - zod
     dev: false
 
-  /@tevm/precompiles@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-7YLPZRJj2/XasPsV9uu6gW1iOhq7JIHoynrz31YhVcYOjdorx9vMG/ZXiw/0bEV07xmQwPeQZY9ToWlWvzTPvQ==}
+  /@tevm/predeploys@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-G/BAwQww663O06BvXn92FiR/5+4/rJhHroE21gxqBYbWADyMyyOXwdW5aOdu9v7BzYWXgQQeetay1k97z32D/A==}
     dependencies:
-      '@tevm/contract': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - typescript
-      - utf-8-validate
-      - zod
-    dev: false
-
-  /@tevm/predeploys@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-n83Oz81rdC3Tln2aHOJg5K5aZ3NY0pzb4OiXpH1Bg0DjBMB0HwvFUw4dtbZDpj1ovh/CwkcvTMOEwzX+GAx9iA==}
-    dependencies:
-      '@tevm/contract': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/contract': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
     transitivePeerDependencies:
       - bufferutil
@@ -1027,11 +1044,11 @@ packages:
       - zod
     dev: false
 
-  /@tevm/procedures@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-TJ2PlgKc5ej8ejXEt+tP5c8WqhHX5RsbxQLLKR/vx9T9y0AbtYaFRyzeedVAqkvr/KHK4AcV/7gjc4jDZCQijg==}
+  /@tevm/procedures@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-Owi3dUZ+BjBQpJzFynPZM4bu02iNLM4qqmlXWe1doIKObNxvlne2gqp1yrRuaR10GzoJpd9FLD9khP7jZ/dw3g==}
     dependencies:
-      '@tevm/actions': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/block': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/actions': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/block': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/tx': 1.1.0-next.60(typescript@5.4.5)
     transitivePeerDependencies:
       - bufferutil
@@ -1041,11 +1058,11 @@ packages:
       - zod
     dev: false
 
-  /@tevm/receipt-manager@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-xDsK7f34IMod2DLPqBRSfRIzbL3bGd+S+KNW7oTGJ/EHm/qxCyE1JlFDmK331IgJQr+NerRO23ECqaC5Z4EDtw==}
+  /@tevm/receipt-manager@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-j8wUwdExnobZowoX4zFpyGUfXfwBzaP9zXK2s9dSwkhu0f+BMGzWxLaaH6ZQDr4WEtnQdGOvQnxX8dA+YtVHFw==}
     dependencies:
-      '@tevm/block': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/blockchain': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/block': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/blockchain': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/rlp': 1.1.0-next.60
       '@tevm/tx': 1.1.0-next.60(typescript@5.4.5)
     transitivePeerDependencies:
@@ -1061,7 +1078,7 @@ packages:
     dependencies:
       '@tevm/tsconfig': 1.1.0-next.60
       '@tevm/tsupconfig': 1.1.0-next.60
-      '@types/node': 20.12.12
+      '@types/node': 20.12.13
       effect: 2.0.0-next.54
       resolve: 1.22.8
 
@@ -1116,44 +1133,52 @@ packages:
       '@tevm/tsconfig': 1.1.0-next.60
       '@tevm/tsupconfig': 1.1.0-next.60
 
-  /@tevm/state@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-jHN6bOMAWI187ROQjGRqMR3cL+T3bVCW3SCQeriHaTWYHHZPKCLtb/qC5BYG9OXD7cnxdRK1bLJ8+9bhX8ZzmQ==}
+  /@tevm/state@1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-MOMYrFxjABn9KnpQZs9LPrMbiQK8PuG4yBv/ElRPIg5foiNVrtMBhMVVFqf86LmB0uby/KfyEj7nDgMnW8qKdQ==}
     dependencies:
       '@ethereumjs/statemanager': 2.3.0
-      '@tevm/common': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/common': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/logger': 1.1.0-next.60
-      '@tevm/test-utils': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/test-utils': 1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
       ethereum-cryptography: 2.1.3
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
+      - debug
+      - fast-check
       - supports-color
       - typescript
       - utf-8-validate
       - zod
     dev: false
 
-  /@tevm/sync-storage-persister@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-EKELzktG/3IjSoEoraUYpSX9C7vejSGb40EHb/SXtC9C+Z1/esM7UxHx9tvaecEPM4aDpJzEBwwPSmNchMCKKA==}
+  /@tevm/sync-storage-persister@1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-jNvqEIjPO4TBmaiLa/G5p4isSB70cmAWG/SIvxebyrR/6nLdfbB5qZiuIeTJKFqo3jWxnqk+WGUjMeU+4lNwfA==}
     dependencies:
-      '@tevm/state': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/state': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - bufferutil
+      - debug
+      - fast-check
       - supports-color
       - typescript
       - utf-8-validate
       - zod
     dev: false
 
-  /@tevm/test-utils@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-Wr3UwaS14wWMXMK5uAhifkb4nUXewKvB6rALfGqfa0PRwz6D52ksn4GcTxXjjVRzJBXst8ksjzFh0OzWGkJjCQ==}
+  /@tevm/test-utils@1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-dZwbcR6UvLy/cnI1Q4wzS4C/tt/Oy9dp69hbdGBLzv2ZU50kAY+7I+tRMP7PiNq46/zuOBmpjfkzSlPnEQPbNg==}
     dependencies:
-      '@ponder/utils': 0.1.5(typescript@5.4.5)(viem@2.12.1)
-      '@tevm/contract': 1.1.0-next.60(typescript@5.4.5)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      '@ponder/utils': 0.1.6(typescript@5.4.5)(viem@2.13.1)
+      '@tevm/contract': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/esbuild-plugin': 1.1.0-next.60(fast-check@3.19.0)
+      '@tevm/ts-plugin': 1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
+      - debug
+      - fast-check
       - supports-color
       - typescript
       - utf-8-validate
@@ -1168,8 +1193,8 @@ packages:
       - supports-color
     dev: false
 
-  /@tevm/ts-plugin@1.1.0-next.60(fast-check@3.19.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-wkGaIRVSy5yx49UwwCyjR2mB08zEjc4rkstqA4BknLVBcGrM+hAITkqRppUJJRIhx2pqR65bH08e5t7JLXzeLw==}
+  /@tevm/ts-plugin@1.1.0-next.62(fast-check@3.19.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-5/Bd+utlWfedIdnpg4Gc/BL5P5nUhD7O/B1pCMd7rYDJSZll1okr7g+dGerEhJ1D/pKEcCKkrYEmHcuFfboHTA==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1192,7 +1217,7 @@ packages:
     resolution: {integrity: sha512-GgCUCVejOdjCm2hIzBTKG2+Q98CcFKUj3kcoDGMX7WpehyQFGwvsDTgb2nQuPVqC/GFuZQy24ajdn2UNjJL1XA==}
     dependencies:
       '@tevm/tsconfig': 1.1.0-next.60
-      '@types/node': 20.12.12
+      '@types/node': 20.12.13
 
   /@tevm/tx@1.1.0-next.60(typescript@5.4.5):
     resolution: {integrity: sha512-nikQMsxSAvYzVQHFeyXRle8jGY13s1WvwUM7CD4d2IDaY0h9Oo3gUELtujQofUtj8qOLoPjF2pADD6DiNTmAFw==}
@@ -1207,10 +1232,10 @@ packages:
       - zod
     dev: false
 
-  /@tevm/txpool@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-1j2ga6bXC83pSgWd+vE6J0FgcMY5FfcQaSYEQiUTKkXktXCw63NGtdIPibqv2Eo18neC94iwbmou/MuxNX8CTQ==}
+  /@tevm/txpool@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-YsE0vtNxBlDC781l/Lbr7Wj9SfQ63xdNYhblLRYwSg+JyPFqPjUfh3GwjSLSI3rop9Rr7MTOXX+07nx5TB+5gQ==}
     dependencies:
-      '@tevm/block': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/block': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/tx': 1.1.0-next.60(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
       qheap: 1.4.0
@@ -1236,7 +1261,6 @@ packages:
     transitivePeerDependencies:
       - debug
       - fast-check
-    dev: true
 
   /@tevm/utils@1.1.0-next.60(typescript@5.4.5):
     resolution: {integrity: sha512-7EYUAJOZa6ZVttUGp8eoJNgxilNWF/OF5BIVWfHsagsjcbiaz8DYDW1W7cPePkRjtGE1AgrYwd+kq+iCQFYooQ==}
@@ -1244,7 +1268,7 @@ packages:
       '@ethereumjs/evm': 3.0.0
       '@ethereumjs/util': 9.0.3
       abitype: 1.0.2(typescript@5.4.5)(zod@3.23.8)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1253,13 +1277,13 @@ packages:
       - zod
     dev: false
 
-  /@tevm/viem@1.1.0-next.60(typescript@5.4.5)(viem@2.12.1):
+  /@tevm/viem@1.1.0-next.60(typescript@5.4.5)(viem@2.13.1):
     resolution: {integrity: sha512-wnowPysY68LAatJhkfJ0z+nGd3eCu6mCHrtNN1VmmWa6cLn4L1WLxIUDM8tAqAWuNitm5bp4zZ0nzavPoHM4fA==}
     peerDependencies:
       viem: 2.x.x
     dependencies:
       '@tevm/jsonrpc': 1.1.0-next.60(typescript@5.4.5)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
     transitivePeerDependencies:
       - bufferutil
       - typescript
@@ -1276,14 +1300,14 @@ packages:
       - fast-check
     dev: true
 
-  /@tevm/vm@1.1.0-next.60(typescript@5.4.5):
-    resolution: {integrity: sha512-OtgF8hyjMFHKp10Y+0xdaVyDo2hhes/Phwdsp8/nDsuEYktGYEtyx1oJl+AlCnm32IfPxOEQYny5HI/WOza3jA==}
+  /@tevm/vm@1.1.0-next.62(typescript@5.4.5):
+    resolution: {integrity: sha512-Z0biisHpM/Sdvp+TFotTnRKfGl+vWyaMpJByv6hsRXfwMxx6YiJm/PGWX6GsYbAY9H7D5ZpU+cjS4VKUxWcrZg==}
     dependencies:
       '@ethereumjs/vm': 8.0.0
-      '@tevm/block': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/blockchain': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/common': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/evm': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/block': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/blockchain': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/common': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/evm': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/rlp': 1.1.0-next.60
       '@tevm/trie': 1.1.0-next.60
       '@tevm/tx': 1.1.0-next.60(typescript@5.4.5)
@@ -1312,7 +1336,7 @@ packages:
     resolution: {integrity: sha512-zm3fOUeztXUzx9LF+jbkwsax6alBthni/Spgm24f4NpEMxYa/eY0ChNQcNXYso/6lay/kWCCQcdSUvGxPvWpzg==}
     dependencies:
       abitype: 1.0.2(typescript@5.4.5)(zod@3.23.8)
-      viem: 2.12.1(typescript@5.4.5)(zod@3.23.8)
+      viem: 2.13.1(typescript@5.4.5)(zod@3.23.8)
       zod: 3.23.8
     transitivePeerDependencies:
       - bufferutil
@@ -1352,17 +1376,56 @@ packages:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
     dev: false
 
-  /@types/node@20.12.12:
-    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
+  /@types/node@20.12.13:
+    resolution: {integrity: sha512-gBGeanV41c1L171rR7wjbMiEpEI/l5XFQdLLfhr/REwpgDy/4U8y89+i8kRiLzDyZdOkXh+cRaTetUnCYutoXA==}
     dependencies:
       undici-types: 5.26.5
 
   /@types/readable-stream@2.3.15:
     resolution: {integrity: sha512-oM5JSKQCcICF1wvGgmecmHldZ48OZamtMxcGGVICOJA8o8cahXC1zEVAif8iwoc5j8etxFaRFnf095+CDsuoFQ==}
     dependencies:
-      '@types/node': 20.12.12
+      '@types/node': 20.12.13
       safe-buffer: 5.1.2
     dev: false
+
+  /@vitest/expect@1.6.0:
+    resolution: {integrity: sha512-ixEvFVQjycy/oNgHjqsL6AZCDduC+tflRluaHIzKIsdbzkLn2U/iBnVeJwB6HsIjQBdfMR8Z0tRxKUsvFJEeWQ==}
+    dependencies:
+      '@vitest/spy': 1.6.0
+      '@vitest/utils': 1.6.0
+      chai: 4.4.1
+    dev: true
+
+  /@vitest/runner@1.6.0:
+    resolution: {integrity: sha512-P4xgwPjwesuBiHisAVz/LSSZtDjOTPYZVmNAnpHHSR6ONrf8eCJOFRvUwdHn30F5M1fxhqtl7QZQUk2dprIXAg==}
+    dependencies:
+      '@vitest/utils': 1.6.0
+      p-limit: 5.0.0
+      pathe: 1.1.2
+    dev: true
+
+  /@vitest/snapshot@1.6.0:
+    resolution: {integrity: sha512-+Hx43f8Chus+DCmygqqfetcAZrDJwvTj0ymqjQq4CvmpKFSTVteEOBzCusu1x2tt4OJcvBflyHUE0DZSLgEMtQ==}
+    dependencies:
+      magic-string: 0.30.10
+      pathe: 1.1.2
+      pretty-format: 29.7.0
+    dev: true
+
+  /@vitest/spy@1.6.0:
+    resolution: {integrity: sha512-leUTap6B/cqi/bQkXUu6bQV5TZPx7pmMBKBQiI0rJA8c3pB56ZsaTbREnF7CJfmvAS4V2cXIBAh/3rVwrrCYgw==}
+    dependencies:
+      tinyspy: 2.2.1
+    dev: true
+
+  /@vitest/utils@1.6.0:
+    resolution: {integrity: sha512-21cPiuGMoMZwiOHa2i4LXkMkMkCGzA+MVFV70jRwHo95dL4x/ts5GZhML1QWuy7yfp3WzK3lRvZi3JnXTYqrBw==}
+    dependencies:
+      diff-sequences: 29.6.3
+      estree-walker: 3.0.3
+      loupe: 2.3.7
+      pretty-format: 29.7.0
+    dev: true
 
   /@webassemblyjs/ast@1.12.1:
     resolution: {integrity: sha512-EKfMUOPRRUTy5UII4qJDGPpqfwjOmZ5jeGFwid9mnoqIFK+e0vqoi1qH56JpmZSzEL53jKnNzScdmftJyG5xWg==}
@@ -1523,11 +1586,15 @@ packages:
       acorn: 8.11.3
     dev: true
 
+  /acorn-walk@8.3.2:
+    resolution: {integrity: sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==}
+    engines: {node: '>=0.4.0'}
+    dev: true
+
   /acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
 
   /ajv-keywords@3.5.2(ajv@6.12.6):
     resolution: {integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==}
@@ -1560,6 +1627,11 @@ packages:
     dependencies:
       color-convert: 2.0.1
 
+  /ansi-styles@5.2.0:
+    resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
+    engines: {node: '>=10'}
+    dev: true
+
   /ansi-styles@6.2.1:
     resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
     engines: {node: '>=12'}
@@ -1570,7 +1642,6 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
-    dev: true
 
   /array-buffer-byte-length@1.0.1:
     resolution: {integrity: sha512-ahC5W1xgou+KTXix4sAO8Ki12Q+jf4i0+tmk3sC+zgcynshkHxzpXdImBehiUYKKKDwvfFiJl1tZt6ewscS1Mg==}
@@ -1621,6 +1692,10 @@ packages:
       util: 0.12.5
     dev: true
 
+  /assertion-error@1.1.0:
+    resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
+    dev: true
+
   /atomic-sleep@1.0.0:
     resolution: {integrity: sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==}
     engines: {node: '>=8.0.0'}
@@ -1646,7 +1721,6 @@ packages:
   /binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
-    dev: true
 
   /bn.js@4.12.0:
     resolution: {integrity: sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==}
@@ -1666,7 +1740,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       fill-range: 7.1.1
-    dev: true
 
   /brorand@1.1.0:
     resolution: {integrity: sha512-cKV8tMCEpQs4hK/ik71d6LrPOnpkpGBR0wzxqr68g2m/LB2GxVYQroAjMJZRVM1Y4BCjCKc3vAamxSzOY2RP+w==}
@@ -1740,8 +1813,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001621
-      electron-to-chromium: 1.4.783
+      caniuse-lite: 1.0.30001625
+      electron-to-chromium: 1.4.784
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16(browserslist@4.23.0)
     dev: true
@@ -1772,6 +1845,11 @@ packages:
     resolution: {integrity: sha512-HpGFw18DgFWlncDfjTa2rcQ4W88O1mC8e8yZ2AvQY5KDaktSTwo+KRf6nHK6FRI5FyRyb/5T6+TSxfP7QyGsmQ==}
     dev: true
 
+  /cac@6.7.14:
+    resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
+    engines: {node: '>=8'}
+    dev: true
+
   /call-bind@1.0.7:
     resolution: {integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==}
     engines: {node: '>= 0.4'}
@@ -1782,8 +1860,27 @@ packages:
       get-intrinsic: 1.2.4
       set-function-length: 1.2.2
 
-  /caniuse-lite@1.0.30001621:
-    resolution: {integrity: sha512-+NLXZiviFFKX0fk8Piwv3PfLPGtRqJeq2TiNoUff/qB5KJgwecJTvCXDpmlyP/eCI/GUEmp/h/y5j0yckiiZrA==}
+  /caniuse-lite@1.0.30001625:
+    resolution: {integrity: sha512-4KE9N2gcRH+HQhpeiRZXd+1niLB/XNLAhSy4z7fI8EzcbcPoAqjNInxVHTiTwWfTIV4w096XG8OtCOCQQKPv3w==}
+    dev: true
+
+  /chai@4.4.1:
+    resolution: {integrity: sha512-13sOfMv2+DWduEU+/xbun3LScLoqN17nBeTLUsmDfKdoiC1fr0n9PU4guu4AhRcOVFk/sW8LyZWHuhWtQZiF+g==}
+    engines: {node: '>=4'}
+    dependencies:
+      assertion-error: 1.1.0
+      check-error: 1.0.3
+      deep-eql: 4.1.3
+      get-func-name: 2.0.2
+      loupe: 2.3.7
+      pathval: 1.1.1
+      type-detect: 4.0.8
+    dev: true
+
+  /check-error@1.0.3:
+    resolution: {integrity: sha512-iKEoDYaRmd1mxM90a2OEfWhjsjPpYPuQ+lMYsoxB126+t8fw7ySEO48nmDg5COTjxDI65/Y2OWpeEHk3ZOe8zg==}
+    dependencies:
+      get-func-name: 2.0.2
     dev: true
 
   /chokidar@3.6.0:
@@ -1799,10 +1896,9 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
-  /chrome-trace-event@1.0.3:
-    resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
+  /chrome-trace-event@1.0.4:
+    resolution: {integrity: sha512-rNjApaLzuwaOTjCiT8lSDdGN1APCiqkChLMJxJPWLunPAt5fy8xgU9/jNOchV84wfIxrA0lRQB7oCT8jrn/wrQ==}
     engines: {node: '>=6.0'}
     dev: true
 
@@ -1832,6 +1928,10 @@ packages:
   /commander@8.3.0:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
+
+  /confbox@0.1.7:
+    resolution: {integrity: sha512-uJcB/FKZtBMCJpK8MQji6bJHgu1tixKPxRLeGkNzBoOZzpnZUJm0jm2/sBDWcuBx1dYgxV4JU+g5hmNxCyAmdA==}
+    dev: true
 
   /console-browserify@1.2.0:
     resolution: {integrity: sha512-ZMkYO/LkF17QvCPqM0gxw8yUzigAOZOSWSHg91FH6orS7vcEj5dVZTidN2fQ14yBSdg97RqhSNwLUXInd52OTA==}
@@ -1935,7 +2035,13 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: false
+
+  /deep-eql@4.1.3:
+    resolution: {integrity: sha512-WaEtAOpRA1MQ0eohqZjpGD8zdI0Ovsm8mmFhaDN8dvDZzyoUMcYDnf5Y6iu7HTXxf8JDS23qWa4a+hKCDyOPzw==}
+    engines: {node: '>=6'}
+    dependencies:
+      type-detect: 4.0.8
+    dev: true
 
   /define-data-property@1.1.4:
     resolution: {integrity: sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A==}
@@ -1960,6 +2066,11 @@ packages:
       minimalistic-assert: 1.0.1
     dev: true
 
+  /diff-sequences@29.6.3:
+    resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dev: true
+
   /diffie-hellman@5.0.3:
     resolution: {integrity: sha512-kqag/Nl+f3GwyK25fhUMYj81BUOrZ9IuJsjIcDE5icNM9FJHAVm3VcUDxdLPoQtTuUylWm6ZIknYJwwaPxsUzg==}
     dependencies:
@@ -1979,8 +2090,8 @@ packages:
   /effect@2.0.0-next.54:
     resolution: {integrity: sha512-qROhKMxlm6fpa90YRfWSgKeelDfhaDq2igPK+pIKupGehiCnZH4vd2qrY71HVZ10qZgXxh0VXpGyDQxJC+EQqw==}
 
-  /electron-to-chromium@1.4.783:
-    resolution: {integrity: sha512-bT0jEz/Xz1fahQpbZ1D7LgmPYZ3iHVY39NcWWro1+hA2IvjiPeaXtfSqrQ+nXjApMvQRE2ASt1itSLRrebHMRQ==}
+  /electron-to-chromium@1.4.784:
+    resolution: {integrity: sha512-9CZwh+sDrhDAeOEFh8s3PqwduzTyYIeYwZolc1b9ENAUt3ePu7R1sJSCWr/820ISssRxCJUyHI9Wb7j+0Uo1AA==}
     dev: true
 
   /elliptic@6.5.5:
@@ -2166,6 +2277,12 @@ packages:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
 
+  /estree-walker@3.0.3:
+    resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
+    dependencies:
+      '@types/estree': 1.0.5
+    dev: true
+
   /ethereum-cryptography@2.1.3:
     resolution: {integrity: sha512-BlwbIL7/P45W8FGW2r7LGuvoEZ+7PWsniMvQ4p5s2xCyw9tmaDlpfsN9HjAucbF+t/qpVHwZUisgfK24TCW8aA==}
     dependencies:
@@ -2189,6 +2306,21 @@ packages:
     dependencies:
       md5.js: 1.3.5
       safe-buffer: 5.2.1
+    dev: true
+
+  /execa@8.0.1:
+    resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
+    engines: {node: '>=16.17'}
+    dependencies:
+      cross-spawn: 7.0.3
+      get-stream: 8.0.1
+      human-signals: 5.0.0
+      is-stream: 3.0.0
+      merge-stream: 2.0.0
+      npm-run-path: 5.3.0
+      onetime: 6.0.0
+      signal-exit: 4.1.0
+      strip-final-newline: 3.0.0
     dev: true
 
   /fast-check@3.19.0:
@@ -2215,7 +2347,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       to-regex-range: 5.0.1
-    dev: true
 
   /find-up@5.0.0:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
@@ -2251,7 +2382,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /function-bind@1.1.2:
@@ -2269,6 +2399,10 @@ packages:
   /functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
 
+  /get-func-name@2.0.2:
+    resolution: {integrity: sha512-8vXOvuE167CtIc3OyItco7N/dpRtBbYOsPsXCz7X/PMnlGjYjSGuZJgM1Y7mmew7BKf9BqvLX2tnOVy1BBUsxQ==}
+    dev: true
+
   /get-intrinsic@1.2.4:
     resolution: {integrity: sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==}
     engines: {node: '>= 0.4'}
@@ -2278,6 +2412,11 @@ packages:
       has-proto: 1.0.3
       has-symbols: 1.0.3
       hasown: 2.0.2
+
+  /get-stream@8.0.1:
+    resolution: {integrity: sha512-VaUJspBffn/LMCJVoMvSAdmscJyS1auj5Zulnn5UoYcY531UWmdwhRWkcGKnGU93m5HSXP9LP2usOryrBtQowA==}
+    engines: {node: '>=16'}
+    dev: true
 
   /get-symbol-description@1.0.2:
     resolution: {integrity: sha512-g0QYk1dZBxGwk+Ngc+ltRH2IBp2f7zBkBMBJZCDerh6EhlhSR6+9irMCuT/09zD6qkarHUSn529sK/yL4S27mg==}
@@ -2292,7 +2431,6 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       is-glob: 4.0.3
-    dev: true
 
   /glob-to-regexp@0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
@@ -2394,6 +2532,11 @@ packages:
     resolution: {integrity: sha512-J+FkSdyD+0mA0N+81tMotaRMfSL9SGi+xpD3T6YApKsc3bGSXJlfXri3VyFOeYkfLRQisDk1W+jIFFKBeUBbBg==}
     dev: true
 
+  /human-signals@5.0.0:
+    resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
+    engines: {node: '>=16.17.0'}
+    dev: true
+
   /ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
@@ -2433,7 +2576,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       binary-extensions: 2.3.0
-    dev: true
 
   /is-boolean-object@1.1.2:
     resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
@@ -2466,7 +2608,6 @@ packages:
   /is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
@@ -2484,7 +2625,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       is-extglob: 2.1.1
-    dev: true
 
   /is-nan@1.3.2:
     resolution: {integrity: sha512-E+zBKpQ2t6MEo1VsonYmluk9NxGrbzpeeLC2xIViuO2EjU2xsXsBPwTr3Ykv9l08UYEVEdWeRZNouaZqF6RN0w==}
@@ -2507,7 +2647,6 @@ packages:
   /is-number@7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
-    dev: true
 
   /is-regex@1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
@@ -2521,6 +2660,11 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.7
+
+  /is-stream@3.0.0:
+    resolution: {integrity: sha512-LnQR4bZ9IADDRSkvpqMGvt/tEJWclzklNgSw48V5EAaAeDd6qGvN8ei6k5p0tvxSR171VmGyHuTiAOfxAbr8kA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
 
   /is-string@1.0.7:
     resolution: {integrity: sha512-tE2UXzivje6ofPW7l23cjDOMa09gb7xlAqG6jG5ej6uPV32TlWP3NKPigtaGeHNu9fohccRYvIiZMfOOnOYUtg==}
@@ -2580,7 +2724,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.12.12
+      '@types/node': 20.12.13
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -2591,6 +2735,10 @@ packages:
 
   /js-sha3@0.8.0:
     resolution: {integrity: sha512-gF1cRrHhIzNfToc802P800N8PpXS+evLLXfsVpowqmAFR9uwbi89WvXg2QspOmXL8QL86J4T1EpFu+yUkwJY3Q==}
+
+  /js-tokens@9.0.0:
+    resolution: {integrity: sha512-WriZw1luRMlmV3LGJaR6QOJjWwgLUTf89OwT2lUOyjX2dJGBwgmIkbcz+7WFZjrZM635JOIR517++e/67CP9dQ==}
+    dev: true
 
   /json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
@@ -2608,11 +2756,25 @@ packages:
     engines: {node: '>=6.11.5'}
     dev: true
 
+  /local-pkg@0.5.0:
+    resolution: {integrity: sha512-ok6z3qlYyCDS4ZEU27HaU6x/xZa9Whf8jD4ptH5UZTQYZVYeb9bnZ3ojVhiJNLiXK1Hfc0GNbLXcmZ5plLDDBg==}
+    engines: {node: '>=14'}
+    dependencies:
+      mlly: 1.7.0
+      pkg-types: 1.1.1
+    dev: true
+
   /locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
+    dev: true
+
+  /loupe@2.3.7:
+    resolution: {integrity: sha512-zSMINGVYkdpYSOBmLi0D1Uo7JU9nVdQKrHxC8eYlV+9YKK9WePqAlL7lSlorG/U2Fw1w0hTBmaa/jrQ3UbPHtA==}
+    dependencies:
+      get-func-name: 2.0.2
     dev: true
 
   /lru-cache@10.1.0:
@@ -2666,6 +2828,11 @@ packages:
       mime-db: 1.52.0
     dev: true
 
+  /mimic-fn@4.0.0:
+    resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
+    engines: {node: '>=12'}
+    dev: true
+
   /minimalistic-assert@1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
     dev: true
@@ -2684,9 +2851,17 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  /mlly@1.7.0:
+    resolution: {integrity: sha512-U9SDaXGEREBYQgfejV97coK0UL1r+qnF2SyO9A3qcI8MzKnsIFKHNVEkrDyNncQTKQQumsasmeq84eNMdBfsNQ==}
+    dependencies:
+      acorn: 8.11.3
+      pathe: 1.1.2
+      pkg-types: 1.1.1
+      ufo: 1.5.3
+    dev: true
+
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: false
 
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
@@ -2738,6 +2913,12 @@ packages:
   /normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
+
+  /npm-run-path@5.3.0:
+    resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      path-key: 4.0.0
     dev: true
 
   /object-inspect@1.13.1:
@@ -2769,6 +2950,13 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: false
 
+  /onetime@6.0.0:
+    resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      mimic-fn: 4.0.0
+    dev: true
+
   /os-browserify@0.3.0:
     resolution: {integrity: sha512-gjcpUc3clBf9+210TRaDWbf+rZZZEshZ+DlXMRCeAjp0xhTrnQsKHypIy1J3d5hKdUzj69t708EHtU8P6bUn0A==}
     dev: true
@@ -2782,6 +2970,13 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yocto-queue: 0.1.0
+    dev: true
+
+  /p-limit@5.0.0:
+    resolution: {integrity: sha512-/Eaoq+QyLSiXQ4lyYV23f14mZRQcXnxfHrN0vCai+ak9G0pp9iEQukIIZq5NccEvwRB8PUnZT0KsOoDCINS1qQ==}
+    engines: {node: '>=18'}
+    dependencies:
+      yocto-queue: 1.0.0
     dev: true
 
   /p-locate@5.0.0:
@@ -2820,6 +3015,11 @@ packages:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
 
+  /path-key@4.0.0:
+    resolution: {integrity: sha512-haREypq7xkM7ErfgIyA0z+Bj4AGKlMSdlQE2jvJo6huWD1EdkKYV+G/T4nq0YEF2vgTT8kqMFKo1uHn950r4SQ==}
+    engines: {node: '>=12'}
+    dev: true
+
   /path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
@@ -2829,6 +3029,14 @@ packages:
     dependencies:
       lru-cache: 10.2.2
       minipass: 7.1.2
+
+  /pathe@1.1.2:
+    resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
+    dev: true
+
+  /pathval@1.1.1:
+    resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
+    dev: true
 
   /pbkdf2@3.1.2:
     resolution: {integrity: sha512-iuh7L6jA7JEGu2WxDwtQP1ddOpaJNC4KlDEFfdQajSGgGPNi4OyDc2R7QnbY2bR9QjBVGwgvTdNJZoE7RaxUMA==}
@@ -2848,7 +3056,6 @@ packages:
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
-    dev: true
 
   /pino-abstract-transport@1.2.0:
     resolution: {integrity: sha512-Guhh8EZfPCfH+PMXAb6rKOjGQEoy0xlAIn+irODG5kgfYV+BQ0rGYYWTIel3P5mmyXqkYkPmdIkywsn6QKUR1Q==}
@@ -2885,6 +3092,14 @@ packages:
       find-up: 5.0.0
     dev: true
 
+  /pkg-types@1.1.1:
+    resolution: {integrity: sha512-ko14TjmDuQJ14zsotODv7dBlwxKhUKQEhuhmbqo1uCi9BB0Z2alo/wAXg6q1dTR5TyuqYyWhjtfe/Tsh+X28jQ==}
+    dependencies:
+      confbox: 0.1.7
+      mlly: 1.7.0
+      pathe: 1.1.2
+    dev: true
+
   /possible-typed-array-names@1.0.0:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
     engines: {node: '>= 0.4'}
@@ -2896,6 +3111,15 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.1
       source-map-js: 1.2.0
+    dev: true
+
+  /pretty-format@29.7.0:
+    resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      '@jest/schemas': 29.6.3
+      ansi-styles: 5.2.0
+      react-is: 18.3.1
     dev: true
 
   /process-nextick-args@2.0.1:
@@ -2966,6 +3190,10 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
+  /react-is@18.3.1:
+    resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+    dev: true
+
   /readable-stream@2.3.8:
     resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
     dependencies:
@@ -3002,7 +3230,6 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
-    dev: true
 
   /real-require@0.2.0:
     resolution: {integrity: sha512-57frrGM/OCTLqLOAh0mhVA9VBMHd+9U7Zb2THMGdBUoZVOtGbJzjxsYGDJ3A9AYYCP4hn6y1TVbaOfzWtm5GFg==}
@@ -3167,6 +3394,10 @@ packages:
       get-intrinsic: 1.2.4
       object-inspect: 1.13.1
 
+  /siginfo@2.0.0:
+    resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
+    dev: true
+
   /signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
@@ -3185,7 +3416,6 @@ packages:
       tmp: 0.0.33
     transitivePeerDependencies:
       - debug
-    dev: true
 
   /solc@0.8.23-fixed:
     resolution: {integrity: sha512-XMp8jbXl29nlD0losEG+9nAdH5bibQPELI0jqOpyqCT7DKo7MbIdWPMwiCtK/QKe0CCvCvKbHswBflZmcmXIYA==}
@@ -3234,6 +3464,14 @@ packages:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
     engines: {node: '>= 10.x'}
     dev: false
+
+  /stackback@0.0.2:
+    resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
+    dev: true
+
+  /std-env@3.7.0:
+    resolution: {integrity: sha512-JPbdCEQLj1w5GilpiHAx3qJvFndqybBysA3qUOnznweH4QbNYUsW/ea8QzSrnh0vNsezMMw5bcVool8lM0gwzg==}
+    dev: true
 
   /stream-browserify@3.0.0:
     resolution: {integrity: sha512-H73RAHsVBapbim0tU2JwwOiXUj+fikfiaoYAKHF3VJfA0pe2BCzkhAHBlLG6REzE+2WNZcxOXjK7lkso+9euLA==}
@@ -3314,6 +3552,17 @@ packages:
     dependencies:
       ansi-regex: 6.0.1
 
+  /strip-final-newline@3.0.0:
+    resolution: {integrity: sha512-dOESqjYr96iWYylGObzd39EuNTa5VJxyvVAEm5Jnh7KGo75V43Hk1odPQkNDyXNmUR6k+gEiDVXnjB8HJ3crXw==}
+    engines: {node: '>=12'}
+    dev: true
+
+  /strip-literal@2.1.0:
+    resolution: {integrity: sha512-Op+UycaUt/8FbN/Z2TWPBLge3jWrP3xj10f3fnYxf052bKuS3EKs1ZQcVGjnEMdsNVAM+plXRdmjrZ/KgG3Skw==}
+    dependencies:
+      js-tokens: 9.0.0
+    dev: true
+
   /supports-color@8.1.1:
     resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
     engines: {node: '>=10'}
@@ -3365,29 +3614,31 @@ packages:
       source-map-support: 0.5.21
     dev: true
 
-  /tevm@1.1.0-next.60(typescript@5.4.5)(viem@2.12.1):
-    resolution: {integrity: sha512-AFCi7eWlGS4zsIJgZqCwR2HJ000O1u+xyI91H5n8NXJYQCb8oZy+WbwgDzmDLpfLpXCMyadylyczbmrirVg2dw==}
+  /tevm@1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)(viem@2.13.1):
+    resolution: {integrity: sha512-D9wE/TafC22xPjtbmhCgicFevT67LH0gRrZYcMlZeJ0AuQMTWaYRAY1P75mcdixVTA3etgBiwy52RRNp/jW7Pg==}
     dependencies:
       '@tevm/actions-types': 1.1.0-next.60
-      '@tevm/base-client': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/base-client': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
       '@tevm/client-types': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/common': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/contract': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/decorators': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/common': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/contract': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/decorators': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/errors': 1.1.0-next.60
-      '@tevm/http-client': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/http-client': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/jsonrpc': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/memory-client': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/precompiles': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/predeploys': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/memory-client': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
+      '@tevm/precompiles': 1.1.0-next.62(typescript@5.4.5)
+      '@tevm/predeploys': 1.1.0-next.62(typescript@5.4.5)
       '@tevm/procedures-types': 1.1.0-next.60(typescript@5.4.5)
       '@tevm/server': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/state': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/sync-storage-persister': 1.1.0-next.60(typescript@5.4.5)
+      '@tevm/state': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
+      '@tevm/sync-storage-persister': 1.1.0-next.63(fast-check@3.19.0)(typescript@5.4.5)
       '@tevm/utils': 1.1.0-next.60(typescript@5.4.5)
-      '@tevm/viem': 1.1.0-next.60(typescript@5.4.5)(viem@2.12.1)
+      '@tevm/viem': 1.1.0-next.60(typescript@5.4.5)(viem@2.13.1)
     transitivePeerDependencies:
       - bufferutil
+      - debug
+      - fast-check
       - supports-color
       - typescript
       - utf-8-validate
@@ -3408,6 +3659,20 @@ packages:
       setimmediate: 1.0.5
     dev: true
 
+  /tinybench@2.8.0:
+    resolution: {integrity: sha512-1/eK7zUnIklz4JUUlL+658n58XO2hHLQfSk1Zf2LKieUjxidN16eKFEoDEfjHc3ohofSSqK3X5yO6VGb6iW8Lw==}
+    dev: true
+
+  /tinypool@0.8.4:
+    resolution: {integrity: sha512-i11VH5gS6IFeLY3gMBQ00/MmLncVP7JLXOw1vlgkytLmJK7QnEr7NXf0LBdxfmNPAeyetukOk0bOYrJrFGjYJQ==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
+  /tinyspy@2.2.1:
+    resolution: {integrity: sha512-KYad6Vy5VDWV4GH3fjpseMQ/XU2BhIYP7Vzd0LG44qRWm/Yt2WCOTicFdvmgo6gWaqooMQCawTtILVQJupKu7A==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
   /tmp@0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}
     engines: {node: '>=0.6.0'}
@@ -3419,10 +3684,14 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
-    dev: true
 
   /tty-browserify@0.0.1:
     resolution: {integrity: sha512-C3TaO7K81YvjCgQH9Q1S3R3P3BtN3RIM8n+OvX4il1K1zgE8ZhI0op7kClgkxtutIE8hQrcrHBXvIheqKUUCxw==}
+    dev: true
+
+  /type-detect@4.0.8:
+    resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
+    engines: {node: '>=4'}
     dev: true
 
   /typed-array-buffer@1.0.2:
@@ -3470,6 +3739,10 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  /ufo@1.5.3:
+    resolution: {integrity: sha512-Y7HYmWaFwPUmkoQCUIAYpKqkOf+SbVj/2fJJZ4RJMCfZp0rTGwRbzQD+HghfnhKOjL9E01okqz+ncJskGYfBNw==}
+    dev: true
+
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
     dependencies:
@@ -3489,7 +3762,6 @@ packages:
       chokidar: 3.6.0
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.6.1
-    dev: true
 
   /update-browserslist-db@1.0.16(browserslist@4.23.0):
     resolution: {integrity: sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==}
@@ -3528,8 +3800,8 @@ packages:
       which-typed-array: 1.1.15
     dev: true
 
-  /viem@2.12.1(typescript@5.4.5)(zod@3.23.8):
-    resolution: {integrity: sha512-71gxcGCXdNXQuBhpqXblVRH1F3hP/wONCptVOCW4r6VrCEXL/9vfNyCdQKtK/0WGyXm04Zs9Jf/AOAxKqf6FmQ==}
+  /viem@2.13.1(typescript@5.4.5)(zod@3.23.8):
+    resolution: {integrity: sha512-QaSCtPXb9uVaba+vOsyCFX21BDWNbjBOuXIWWlQXLmECtr/mbJ64XUHyFz6KLvUwAsQ+vxUQVwgmXc3jVMxwYw==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:
@@ -3551,20 +3823,41 @@ packages:
       - zod
     dev: false
 
-  /vite-plugin-node-polyfills@0.22.0(vite@5.2.11):
+  /vite-node@1.6.0:
+    resolution: {integrity: sha512-de6HJgzC+TFzOu0NTC4RAIsyf/DY/ibWDYQUcuEA84EMHhcefTUGkjFHKKEJhQN4A+6I0u++kr3l36ZF2d7XRw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    dependencies:
+      cac: 6.7.14
+      debug: 4.3.4
+      pathe: 1.1.2
+      picocolors: 1.0.1
+      vite: 5.2.12
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vite-plugin-node-polyfills@0.22.0(vite@5.2.12):
     resolution: {integrity: sha512-F+G3LjiGbG8QpbH9bZ//GSBr9i1InSTkaulfUHFa9jkLqVGORFBoqc2A/Yu5Mmh1kNAbiAeKeK+6aaQUf3x0JA==}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
     dependencies:
       '@rollup/plugin-inject': 5.0.5
       node-stdlib-browser: 1.2.0
-      vite: 5.2.11
+      vite: 5.2.12
     transitivePeerDependencies:
       - rollup
     dev: true
 
-  /vite@5.2.11:
-    resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
+  /vite@5.2.12:
+    resolution: {integrity: sha512-/gC8GxzxMK5ntBwb48pR32GGhENnjtY30G4A0jemunsBkiEZFw60s8InGpN8gkhHEkjnRK1aSAxeQgwvFhUHAA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3598,6 +3891,61 @@ packages:
       fsevents: 2.3.3
     dev: true
 
+  /vitest@1.6.0:
+    resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@types/node': ^18.0.0 || >=20.0.0
+      '@vitest/browser': 1.6.0
+      '@vitest/ui': 1.6.0
+      happy-dom: '*'
+      jsdom: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@types/node':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+    dependencies:
+      '@vitest/expect': 1.6.0
+      '@vitest/runner': 1.6.0
+      '@vitest/snapshot': 1.6.0
+      '@vitest/spy': 1.6.0
+      '@vitest/utils': 1.6.0
+      acorn-walk: 8.3.2
+      chai: 4.4.1
+      debug: 4.3.4
+      execa: 8.0.1
+      local-pkg: 0.5.0
+      magic-string: 0.30.10
+      pathe: 1.1.2
+      picocolors: 1.0.1
+      std-env: 3.7.0
+      strip-literal: 2.1.0
+      tinybench: 2.8.0
+      tinypool: 0.8.4
+      vite: 5.2.12
+      vite-node: 1.6.0
+      why-is-node-running: 2.2.2
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
   /vm-browserify@1.1.2:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: true
@@ -3613,11 +3961,9 @@ packages:
   /webpack-sources@3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
-    dev: true
 
   /webpack-virtual-modules@0.6.1:
     resolution: {integrity: sha512-poXpCylU7ExuvZK8z+On3kX+S8o/2dQ/SVYueKA0D4WEMXROXgY8Ez50/bQEUmvoSMMrWcrJqCHuhAbsiwg7Dg==}
-    dev: true
 
   /webpack@5.91.0:
     resolution: {integrity: sha512-rzVwlLeBWHJbmgTC/8TvAcu5vpJNII+MelQpylD4jNERPwpBJOE2lEcko1zJX3QJeLjTTAnQxn/OJ8bjDzVQaw==}
@@ -3637,7 +3983,7 @@ packages:
       acorn: 8.11.3
       acorn-import-assertions: 1.9.0(acorn@8.11.3)
       browserslist: 4.23.0
-      chrome-trace-event: 1.0.3
+      chrome-trace-event: 1.0.4
       enhanced-resolve: 5.16.1
       es-module-lexer: 1.5.3
       eslint-scope: 5.1.1
@@ -3685,6 +4031,15 @@ packages:
     dependencies:
       isexe: 2.0.0
 
+  /why-is-node-running@2.2.2:
+    resolution: {integrity: sha512-6tSwToZxTOcotxHeA+qGCq1mVzKR3CwcJGmVcY+QE8SHy6TnpFnh8PAvPNHYr7EcuVeG0QSMxtYCuO1ta/G/oA==}
+    engines: {node: '>=8'}
+    hasBin: true
+    dependencies:
+      siginfo: 2.0.0
+      stackback: 0.0.2
+    dev: true
+
   /wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
     engines: {node: '>=10'}
@@ -3722,6 +4077,11 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /yocto-queue@1.0.0:
+    resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
+    engines: {node: '>=12.20'}
     dev: true
 
   /zod@3.23.8:
