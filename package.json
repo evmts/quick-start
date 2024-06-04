@@ -1,25 +1,28 @@
 {
-	"name": "tevm-app",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "vitest",
-		"dev": "npx vite ."
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@tevm/ts-plugin": "1.1.0-next.62",
-		"tevm": "1.1.0-next.63",
-		"viem": "^2.13.1"
-	},
-	"devDependencies": {
-		"@tevm/bundler": "1.1.0-next.62",
-		"typescript": "^5.4.5",
-		"vite": "^5.2.12",
-		"vite-plugin-node-polyfills": "^0.22.0",
-		"vitest": "^1.6.0"
-	}
+  "name": "tevm-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "dev": "npx vite ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tevm/ts-plugin": "1.1.0-next.69",
+    "ethers": "^6.13.0",
+    "tevm": "1.1.0-next.69",
+    "viem": "^2.13.5",
+    "wagmi": "^2.9.8"
+  },
+  "devDependencies": {
+    "@tevm/bundler": "1.1.0-next.69",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "vitest": "^1.6.0"
+  }
 }
