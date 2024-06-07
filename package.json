@@ -14,9 +14,9 @@
   "dependencies": {
     "@tevm/ts-plugin": "1.1.0-next.70",
     "ethers": "^6.13.0",
-    "tevm": "1.1.0-next.70",
-    "viem": "^2.13.6",
-    "wagmi": "^2.9.9"
+    "tevm": "1.1.0-next.71",
+    "viem": "^2.13.7",
+    "wagmi": "^2.9.10"
   },
   "devDependencies": {
     "@tevm/bundler": "1.1.0-next.70",
