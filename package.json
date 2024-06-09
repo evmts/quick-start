@@ -12,16 +12,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tevm/ts-plugin": "1.1.0-next.70",
+    "@tevm/ts-plugin": "1.1.0-next.72",
     "ethers": "^6.13.0",
-    "tevm": "1.1.0-next.71",
+    "tevm": "1.1.0-next.73",
     "viem": "^2.13.7",
     "wagmi": "^2.9.10"
   },
   "devDependencies": {
-    "@tevm/bundler": "1.1.0-next.70",
+    "@tevm/bundler": "1.1.0-next.73",
     "typescript": "^5.4.5",
-    "vite": "^5.2.12",
+    "vite": "^5.2.13",
     "vite-plugin-node-polyfills": "^0.22.0",
     "vitest": "^1.6.0"
   }
