@@ -12,14 +12,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tevm/ts-plugin": "1.1.0-next.72",
+    "@tevm/ts-plugin": "1.1.0-next.74",
     "ethers": "^6.13.0",
-    "tevm": "1.1.0-next.73",
-    "viem": "^2.13.7",
-    "wagmi": "^2.9.10"
+    "tevm": "1.1.0-next.74",
+    "viem": "^2.13.8",
+    "wagmi": "^2.10.1"
   },
   "devDependencies": {
-    "@tevm/bundler": "1.1.0-next.73",
+    "@tevm/bundler": "1.1.0-next.74",
     "typescript": "^5.4.5",
     "vite": "^5.2.13",
     "vite-plugin-node-polyfills": "^0.22.0",
