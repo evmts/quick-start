@@ -26,7 +26,7 @@ test("Call precompile from solidity script", async () => {
 		 * Tevm scripts when imported with the tevm compiler provide a stramlined dev experience where contract building happens directly via a
 		 * javascript import.
 		 */
-		...WriteHelloWorld.write.write(fsPrecompile.contract.address),
+		...WriteHelloWorld.write.hello(fsPrecompile.contract.address),
 		throwOnFail: false,
 	});
 

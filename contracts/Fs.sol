@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >0.8.0;
 
+/// @notice A simple file system interface that wraps node.js fs.readFile and fs.writeFile.
 interface Fs {
     /**
      * @notice Reads the content of a file at the specified path.
