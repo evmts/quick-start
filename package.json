@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tevm/test-utils": "1.1.0-next.78",
     "@tevm/ts-plugin": "1.1.0-next.77",
     "ethers": "^6.13.0",
     "tevm": "1.1.0-next.77",

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@tevm/test-utils':
+        specifier: 1.1.0-next.78
+        version: 1.1.0-next.78(bufferutil@4.0.8)(fast-check@3.19.0)(typescript@5.4.5)(zod@3.23.8)
       '@tevm/ts-plugin':
         specifier: 1.1.0-next.77
         version: 1.1.0-next.77(fast-check@3.19.0)(typescript@5.4.5)
@@ -1719,8 +1722,8 @@ packages:
   '@tevm/sync-storage-persister@1.1.0-next.77':
     resolution: {integrity: sha512-ggRYn9j7QWPrhaAv43uPWQ6caaJlp8I0ltZwvQc+BI61YZjemOw6CoEapYOZzfd46UWR7hQC0B4iutgU6r3aOA==}
 
-  '@tevm/test-utils@1.1.0-next.77':
-    resolution: {integrity: sha512-NYyYjYOZPVsqfF2cDaXRGsrak0yppP0eTYdzQxxpEK+FmFLA22BV5STbUIp+98Pk0YeS/uoiki0iiGuDrlLKjw==}
+  '@tevm/test-utils@1.1.0-next.78':
+    resolution: {integrity: sha512-mYBJfwPbNfc6XVVSK1sjFMUus0zkLMtf53pSVfFvcuTJUWN3ZTkhTdDxwwJD0jhtTVsQc2N7pvDjtJ3MiElUbg==}
 
   '@tevm/trie@1.1.0-next.77':
     resolution: {integrity: sha512-M0PtrDbA/w8mdncL3W/sHIGWzxeyAduDR3WxcZBz+kpoRGB69ZPqiWTqT0cSGLp4i9ALtwfEVSkEQt7QbKLy8w==}
@@ -7624,7 +7627,7 @@ snapshots:
       '@tevm/common': 1.1.0-next.77(typescript@5.4.5)(viem@2.14.0(bufferutil@4.0.8)(typescript@5.4.5)(zod@3.23.8))(zod@3.23.8)
       '@tevm/errors': 1.1.0-next.77(viem@2.14.0(bufferutil@4.0.8)(typescript@5.4.5)(zod@3.23.8))
       '@tevm/logger': 1.1.0-next.77
-      '@tevm/test-utils': 1.1.0-next.77(bufferutil@4.0.8)(fast-check@3.19.0)(typescript@5.4.5)(zod@3.23.8)
+      '@tevm/test-utils': 1.1.0-next.78(bufferutil@4.0.8)(fast-check@3.19.0)(typescript@5.4.5)(zod@3.23.8)
       '@tevm/utils': 1.1.0-next.77(typescript@5.4.5)(viem@2.14.0(bufferutil@4.0.8)(typescript@5.4.5)(zod@3.23.8))(zod@3.23.8)
       ethereum-cryptography: 2.2.0
       viem: 2.14.0(bufferutil@4.0.8)(typescript@5.4.5)(zod@3.23.8)
@@ -7650,7 +7653,7 @@ snapshots:
       - viem
       - zod
 
-  '@tevm/test-utils@1.1.0-next.77(bufferutil@4.0.8)(fast-check@3.19.0)(typescript@5.4.5)(zod@3.23.8)':
+  '@tevm/test-utils@1.1.0-next.78(bufferutil@4.0.8)(fast-check@3.19.0)(typescript@5.4.5)(zod@3.23.8)':
     dependencies:
       '@openzeppelin/contracts': 5.0.2
       '@ponder/utils': 0.1.6(typescript@5.4.5)(viem@2.14.0(bufferutil@4.0.8)(typescript@5.4.5)(zod@3.23.8))
