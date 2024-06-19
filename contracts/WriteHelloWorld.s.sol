@@ -11,7 +11,7 @@ contract WriteHelloWorld {
     /// @notice Writes "Hello world" to a file named "test.txt".
     /// @dev Uses the Fs contract to write the file.
     /// @param fs An instance of the Fs contract.
-    function hello(Fs fs) public {
-        fs.writeFile("test.txt", "Hello world");
+    function hello(Fs fs, string calldata path, string calldata data) public {
+        fs.writeFile(path, data);
     }
 }

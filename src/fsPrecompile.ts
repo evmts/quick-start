@@ -16,6 +16,7 @@ export const fsPrecompile = definePrecompile({
 	contract: Fs.withAddress("0xf2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2"),
 	call: defineCall(Fs.abi, {
 		readFile: async ({ args }) => {
+			console.log("readFile", args);
 			return {
 				returnValue: await fs.readFile(...args, "utf8"),
 				executionGasUsed: 0n,
