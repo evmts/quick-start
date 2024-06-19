@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-import { vitePluginTevm } from "@tevm/bundler/vite-plugin";
+import { vitePluginTevm } from "tevm/bundler/vite-plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig({

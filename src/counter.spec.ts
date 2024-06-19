@@ -21,12 +21,12 @@ test("Call precompile from solidity script", async () => {
 	/**
 	 * `tevmScript` runs arbitrary solidity scripts on the memory client
 	 */
-	await client.tevmScript({
+	await client.tevmContract({
 		/**
 		 * Tevm scripts when imported with the tevm compiler provide a stramlined dev experience where contract building happens directly via a
 		 * javascript import.
 		 */
-		...WriteHelloWorld.write.hello(fsPrecompile.contract.address),
+		...WriteHelloWorld.script().write.hello(fsPrecompile.contract.address),
 		throwOnFail: false,
 	});
 

@@ -9,13 +9,11 @@ import { defineCall, definePrecompile } from "tevm";
  */
 import { Fs } from "../contracts/Fs.sol";
 
-const contract = Fs.withAddress("0xf2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2");
-
 /**
  * A precompile build with tevm that allows the use of `fs.readFile` and `fs.writeFile` in Solidity scripts
  */
 export const fsPrecompile = definePrecompile({
-	contract,
+	contract: Fs.withAddress("0xf2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2"),
 	call: defineCall(Fs.abi, {
 		readFile: async ({ args }) => {
 			return {
@@ -24,6 +22,7 @@ export const fsPrecompile = definePrecompile({
 			};
 		},
 		writeFile: async ({ args }) => {
+			console.log("writeFile", args);
 			await fs.writeFile(...args);
 			return { returnValue: true, executionGasUsed: 0n };
 		},
