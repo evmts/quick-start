@@ -133,13 +133,9 @@ async function runApp() {
 	 * The two main ways to deploy a contract are `tevmSetAccount` and `tevmDeploy`
 	 * `tevmDeploy` deploys a contract with it's constructor bytecode
 	 */
-	const deployResult = await memoryClient.tevmDeploy({
-		from: prefundedAccounts[0],
-		abi: SimpleContract.abi,
-		// make sure to use bytecode rather than deployedBytecode since we are deploying
-		bytecode: SimpleContract.bytecode,
-		args: [initialValue],
-	});
+	const deployResult = await memoryClient.tevmDeploy(
+		SimpleContract.deploy(initialValue),
+	);
 	if (deployResult.errors) throw deployResult.errors;
 
 	status.innerHTML = `Mining contract deployment tx ${deployResult.txHash} for contract ${deployResult.createdAddress}...`;
