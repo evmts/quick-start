@@ -12,18 +12,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tevm/test-utils": "1.1.0-next.92",
-    "@tevm/ts-plugin": "1.0.0-next.86",
-    "ethers": "^6.13.1",
-    "tevm": "1.1.0-next.92",
-    "viem": "^2.17.3",
-    "wagmi": "^2.10.9"
+    "@tevm/test-utils": "1.0.0-next.109",
+    "@tevm/ts-plugin": "1.0.0-next.109",
+    "ethers": "^6.13.2",
+    "tevm": "1.0.0-next.110",
+    "viem": "^2.21.1",
+    "wagmi": "^2.12.8"
   },
   "devDependencies": {
     "@openzeppelin/contracts": "^5.0.2",
-    "typescript": "^5.5.3",
-    "vite": "^5.3.3",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
     "vite-plugin-node-polyfills": "^0.22.0",
-    "vitest": "^2.0.1"
+    "vitest": "^2.0.5"
   }
 }
