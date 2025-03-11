@@ -12,18 +12,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tevm/test-utils": "1.0.0-next.109",
-    "@tevm/ts-plugin": "1.0.0-next.109",
-    "ethers": "^6.13.2",
-    "tevm": "1.0.0-next.110",
-    "viem": "^2.21.1",
-    "wagmi": "^2.12.8"
+    "@tevm/test-utils": "1.0.0-next.128",
+    "@tevm/ts-plugin": "1.0.0-next.128",
+    "ethers": "^6.13.5",
+    "tevm": "1.0.0-next.130",
+    "viem": "^2.23.9",
+    "wagmi": "^2.14.13"
   },
   "devDependencies": {
-    "@openzeppelin/contracts": "^5.0.2",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.2",
-    "vite-plugin-node-polyfills": "^0.22.0",
-    "vitest": "^2.0.5"
-  }
+    "@openzeppelin/contracts": "^5.2.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1",
+    "vite-plugin-node-polyfills": "^0.23.0",
+    "vitest": "^3.0.8"
+  },
+  "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3"
 }
