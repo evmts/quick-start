@@ -60,7 +60,7 @@ async function updateAccounts(address: Address) {
 	const info = document.querySelector("#contractInfoRow")!;
 
 	header.innerHTML = `<tr>Address</tr>
-  <tr>deplyedBytecode</tr>
+  <tr>deployedBytecode</tr>
   ${Object.keys(contractAccount.storage ?? []).map(
 		(storageSlot) => `<tr>${storageSlot}</tr>`,
 	)}
@@ -91,7 +91,7 @@ async function runApp() {
 <div>
   Balance: <span id="balance"></span>
 </div>
-<h1>Counter contract</h1>
+<h1>SimpleContract contract</h1>
 
 <!-- Contract info -->
 <table border="1" id="contractInfo">
@@ -186,7 +186,7 @@ async function runApp() {
 	const mineResult = await memoryClient.tevmMine();
 
 	/**
-	 * Deomonstrating another viem method `getTransactionReceipt`
+	 * Demonstrating another viem method `getTransactionReceipt`
 	 */
 	const receipt = await memoryClient.getTransactionReceipt({
 		hash: writeResult.txHash as Hex,
